@@ -1,3 +1,4 @@
+module.exports = function toReadable (num) {
 words = {
   "0": "zero",
   "1": "one",
@@ -28,7 +29,6 @@ words = {
   "80": "eighty",
   "90": "ninety",
 }
-function toReadable(num) {
   switch (true){
     case (num<=20):
         a = words[num];
@@ -40,8 +40,4 @@ function toReadable(num) {
         else a = words[Math.floor(num/100)] +" hundred" +" " + (num%100>20? words[num%100-num%10] +" "+words[num%10] : words[num%100])
   }
   return a
-}
-
-module.exports = {
-    toReadable
 }
