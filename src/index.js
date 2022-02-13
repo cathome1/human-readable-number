@@ -29,15 +29,6 @@ words = {
   "80": "eighty",
   "90": "ninety",
 }
-  switch (true){
-    case (num<=20):
-        a = words[num];
-    case (20<num<100):
-        if(num%10==0) a = words[num-num%10]
-        else a = words[num-num%10] +" "+words[num%10]
-    case (100<=num<=999):
-        if(num%100==0) a = words[num/100] + " " +"hundred"
-        else a = words[Math.floor(num/100)] +" hundred" +" " + (num%100>20? words[num%100-num%10] +" "+words[num%10] : words[num%100])
-  }
+  a = (num>99 ? words[Math.floor(num/100)]+" hundred":"") + (20<=num%100 ? " " + words[num%100-num%10]+(num%10===0 ? "":" " + words[num%10]):"") + (num%100<20 ? " " + words[num%100]:"")
   return a
 }
