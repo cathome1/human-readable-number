@@ -29,6 +29,6 @@ words = {
   "80": "eighty",
   "90": "ninety",
 }
-  a = (num>99 ? words[Math.floor(num/100)]+" hundred":"") + (20<=num%100 ? " " + words[num%100-num%10]+(num%10===0 ? "":" " + words[num%10]):"") + (num%100<20 ? " " + words[num%100]:"")
-  return a
+a = (num>99 ? words[Math.floor(num/100)]+" hundred":"") + (20<=num%100 ? " " + words[num%100-num%10]+(num%10===0 ? "":" " + words[num%10]):"") + (num%100<20 ? num%100!==0 ? " " + words[num%100]:"":"")
+return a === ""?words["0"]:a.trim()
 }
