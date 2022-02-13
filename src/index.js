@@ -28,7 +28,7 @@ words = {
   "80": "eighty",
   "90": "ninety",
 }
-module.exports = function toReadable(num) {
+function toReadable(num) {
   switch (true){
     case (num<=20):
         a = words[num];
@@ -41,4 +41,7 @@ module.exports = function toReadable(num) {
   }
   return a
 }
-console.log(toReadable(900))
+
+module.exports = {
+    toReadable
+}
